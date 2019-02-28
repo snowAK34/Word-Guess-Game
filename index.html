@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Word Guess Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Name of the Game -->
+        <div class="row">
+            <div class="col">
+                <h1>NAME PLACEHOLDER</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-3">
+                <!-- Statistics to keep track of -->
+                <div id="scoreboard">
+                    <ul>
+                        <li>Wins: <span id="win">0</span></li>
+                        <li>Losses: <span id="loss">0</span></li>
+                        <li>Guesses Left: <span id="miss">0</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Gameboard with answer blanks -->
+            <div class="col col-lg-9" id="gameboard">
+                <!-- Leading instrustions, to disappear on keystroke -->
+                <div class="row">
+                    <div class="col">
+                        <h2>Press Any Key to Start!</h2>
+                    </div>
+                </div>
+                <h2>_ _ _ _ _ _ _ _</h2>
+            </div>
+        </div>
+
+
+        <!-- Bank of Letters Already Guessed -->
+        <div class="row" id="past-guesses">
+            <div class="col col-lg-3">
+            <!-- Empty spaceholder column so guess bank lines up with gameboard -->
+            </div>
+            <div class="col col-lg-9">
+                <h4>You have guessed these letters:</h4>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
