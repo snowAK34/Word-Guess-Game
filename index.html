@@ -13,25 +13,14 @@
     <div class="container">
 
         <!-- Name of the Game -->
-        <div class="row">
+        <div class="row" id=#gamename>
             <div class="col">
-                <h1>NAME PLACEHOLDER</h1>
+                <h1>Zoological Word Game</h1>
             </div>
         </div>
-
         <div class="row">
-            <div class="col col-lg-3">
-                <!-- Statistics to keep track of -->
-                <div id="scoreboard">
-                    <ul>
-                        <li>Wins: <span id="win">0</span></li>
-                        <li>Losses: <span id="loss">0</span></li>
-                        <li>Guesses Left: <span id="miss">0</span></li>
-                    </ul>
-                </div>
-            </div>
             <!-- Gameboard with answer blanks -->
-            <div class="col col-lg-9" id="gameboard">
+            <div class="col col-lg-8" id="gameboard">
                 <!-- Leading instrustions, to disappear on keystroke -->
                 <div class="row">
                     <div class="col">
@@ -40,20 +29,27 @@
                 </div>
                 <h2><span id="letter-slots"></span></h2>
             </div>
+            <div class="col col-lg-2" id="scoreboard">
+                <!-- Statistics to keep track of -->
+                <ul>
+                    <li>Wins: <span id="win">0</span></li>
+                    <li>Losses: <span id="loss">0</span></li>
+                    <li>Guesses Left: <span id="miss">0</span></li>
+                </ul>
+            </div>
         </div>
 
         <!-- Bank of Letters Already Guessed -->
-        <div class="row" id="guess-bank">
-            <div class="col col-lg-3">
-            <!-- Empty spaceholder column so guess bank lines up with gameboard -->
-            </div>
-            <div class="col col-lg-9">
+        <div class="row">
+            <div class="col col-lg-8" id="guess-bank">
                 <h4>You have guessed these letters:</h4>
                 <!-- Guessed letters go here -->
                 <p><span id="past-guesses"></span></p>
             </div>
+            <div class="col col-lg-2">
+                    <!-- Empty spaceholder column so guess bank lines up with gameboard -->
+            </div>
         </div>
-
     </div>
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>

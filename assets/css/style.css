@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#gamename {
+    background-color: lightgreen;
+    width: 100%;
+    border: solid thin black;
+    padding: 1rem;
+}
+
+#gameboard {
+    background-color: antiquewhite;
+    border: solid thin black;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+#scoreboard {
+    background-color: antiquewhite;
+    border: solid thin black;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+#guess-bank {
+    background-color: antiquewhite;
+    border: solid thin black;
+    margin: 1rem;
+    padding: 1rem;
+}
