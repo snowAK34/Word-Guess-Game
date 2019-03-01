@@ -12,9 +12,12 @@ let matchCount = 0;
 let wins = 0;
 let losses = 0 ;
 let guessesLeft = 10;
-let slot = " _ ";
+const slot = "_ ";
+let slotArr = [];
+let newSlotArr = [];
 
-function gameStart () {
+function gameStart() {
+
 // Reset Variables
 pastGuesses = [] ;
 matchCount = 0;
@@ -31,8 +34,13 @@ console.log("Answer Letters: " + answerLetters);
 answerLength = answerLetters.length;
 console.log("Answer Length: " + answerLength);
 
-document.getElementById("letter-slots").textContent = slot.repeat(answerLength);
+let slotStr = slot.repeat(answerLength);
+slotArr = slotStr.split(" ");
+document.getElementById("letter-slots").textContent = slotArr.join(" ");
+
+gamePlay();
 }
+
 
 function gamePlay() {
 // Obtain guess from user on keypress, changes to uppercase, & stores in a list of guesses
@@ -45,7 +53,7 @@ function gamePlay() {
         }
     // Checks that answer is a letter
             else if (!letters.includes(userGuess)) {
-                alert("That is not a letter. Try pressing a letter key.")
+                alert("To make a guess, try pressing a letter key.")
             }
     // If both a new letter and not in the answer, counts down a guess
         else if (!answerLetters.includes(userGuess) && !pastGuesses.includes(userGuess) && letters.includes(userGuess)) {
@@ -56,16 +64,18 @@ function gamePlay() {
         gameEnd();
         }
     // A good answer will count toward number of matches in answer word
+    // Display correct letter
     // When matches reach the answer length, user wins
         else {
             pastGuesses.push(userGuess);
             for (x = 0 ; x < answerLetters.length; x++) {
                 if (answerLetters[x] === userGuess) {
-                    matchCount++;
-                    console.log("matchCount: " + matchCount);
-            gameEnd();
+                    slotArr.splice(x, 1, answerLetters[x]);
+                    newSlotArr = slotArr.join(" ");
                 }
             }
+            document.getElementById("letter-slots").textContent = newSlotArr;
+            gameEnd();    
         }
         document.getElementById("win").textContent = wins;
         document.getElementById("loss").textContent = losses;
@@ -74,7 +84,7 @@ function gamePlay() {
     }
 }
 function gameEnd() {
-    if (matchCount === answerLength) {
+    if (!newSlotArr.includes("_ ")) {
         wins++;
         console.log("Wins: " + wins);
         gameStart();
@@ -87,4 +97,3 @@ function gameEnd() {
 }
 
 gameStart();
-gamePlay();
