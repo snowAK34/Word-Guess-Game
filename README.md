@@ -6,7 +6,7 @@ My first Javascript project is an exercise to make a word guess game in a hangma
 
 If the guesses run out, a loss is recorded and the game restarts.  If all of the answer letters are matched, a win is recorded and the game restarts.
 
-## Made with
+## Created with
 
 Javascript, HTML, & CSS
 
