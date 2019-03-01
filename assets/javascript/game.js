@@ -9,10 +9,10 @@ let answerLength ;
 let userGuess ;
 let pastGuesses = [] ;
 let matchCount = 0;
-let wins = 0; 
-let losses = 0 ; 
-let guessesLeft = 10;  
-
+let wins = 0;
+let losses = 0 ;
+let guessesLeft = 10;
+let slot = " _ ";
 
 function gameStart () {
 // Reset Variables
@@ -30,45 +30,48 @@ console.log("Answer Letters: " + answerLetters);
 
 answerLength = answerLetters.length;
 console.log("Answer Length: " + answerLength);
+
+document.getElementById("letter-slots").textContent = slot.repeat(answerLength);
 }
 
 function gamePlay() {
 // Obtain guess from user on keypress, changes to uppercase, & stores in a list of guesses
-document.onkeyup = function (event) {
-    userGuess = event.key.toUpperCase();
+    document.onkeyup = function (event) {
+        userGuess = event.key.toUpperCase();
 
-// Check if answer has been tried
-    if (pastGuesses.includes(userGuess)) {
-        alert("You have already guessed that letter, try again.");
-    }
-// Checks that answer is a letter
-        else if (!letters.includes(userGuess)) {
-            alert("That is not a letter. Try pressing a letter key.")
+    // Check if answer has been tried
+        if (pastGuesses.includes(userGuess)) {
+            alert("You have already guessed that letter, try again.");
         }
-// If both a new letter and not in the answer, counts down a guess
-    else if (!answerLetters.includes(userGuess) && !pastGuesses.includes(userGuess) && letters.includes(userGuess)) {
-        pastGuesses.push(userGuess);
-        --guessesLeft;
-        console.log(pastGuesses);
-        console.log("Guesses Left: " + guessesLeft);
-    gameEnd();
-    }
-// A good answer will count toward number of matches in answer word
-// When matches reach the answer length, user wins
-    else {
-        pastGuesses.push(userGuess);
-        for (x = 0 ; x < answerLetters.length; x++) {
-            if (answerLetters[x] === userGuess) {
-                matchCount++;
-                console.log("matchCount: " + matchCount);
+    // Checks that answer is a letter
+            else if (!letters.includes(userGuess)) {
+                alert("That is not a letter. Try pressing a letter key.")
+            }
+    // If both a new letter and not in the answer, counts down a guess
+        else if (!answerLetters.includes(userGuess) && !pastGuesses.includes(userGuess) && letters.includes(userGuess)) {
+            pastGuesses.push(userGuess);
+            --guessesLeft;
+            console.log(pastGuesses);
+            console.log("Guesses Left: " + guessesLeft);
         gameEnd();
+        }
+    // A good answer will count toward number of matches in answer word
+    // When matches reach the answer length, user wins
+        else {
+            pastGuesses.push(userGuess);
+            for (x = 0 ; x < answerLetters.length; x++) {
+                if (answerLetters[x] === userGuess) {
+                    matchCount++;
+                    console.log("matchCount: " + matchCount);
+            gameEnd();
+                }
             }
         }
+        document.getElementById("win").textContent = wins;
+        document.getElementById("loss").textContent = losses;
+        document.getElementById("miss").textContent = guessesLeft;
+        document.getElementById("past-guesses").textContent = pastGuesses;
     }
-    document.getElementById("win").textContent = wins;
-    document.getElementById("loss").textContent = losses;
-    document.getElementById("miss").textContent = guessesLeft;
-}
 }
 function gameEnd() {
     if (matchCount === answerLength) {

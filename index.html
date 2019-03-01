@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
 <body>
@@ -39,21 +38,24 @@
                         <h2>Press Any Key to Start!</h2>
                     </div>
                 </div>
-                <h2>_ _ _ _ _ _ _ _</h2>
+                <h2><span id="letter-slots"></span></h2>
             </div>
         </div>
 
-
         <!-- Bank of Letters Already Guessed -->
-        <div class="row" id="past-guesses">
+        <div class="row" id="guess-bank">
             <div class="col col-lg-3">
             <!-- Empty spaceholder column so guess bank lines up with gameboard -->
             </div>
             <div class="col col-lg-9">
                 <h4>You have guessed these letters:</h4>
+                <!-- Guessed letters go here -->
+                <p><span id="past-guesses"></span></p>
             </div>
         </div>
 
     </div>
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
