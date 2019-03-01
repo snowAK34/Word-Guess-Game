@@ -15,13 +15,24 @@ let guessesLeft = 10;
 const slot = "_ ";
 let slotArr = [];
 let newSlotArr = [];
+let gameRunning = false;
+
+function getGoing() {
+    if (gameRunning == false) {
+        document.onkeyup = function() {
+            gameStart();
+        }
+    };
+};
 
 function gameStart() {
-
 // Reset Variables
 pastGuesses = [] ;
 matchCount = 0;
 guessesLeft = 10;
+
+// Hide Directions
+document.getElementById("instructions").style.display = "none";
 
 // Computer decides a random word for the game
 computerAnswer = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -37,6 +48,8 @@ console.log("Answer Length: " + answerLength);
 let slotStr = slot.repeat(answerLength);
 slotArr = slotStr.split(" ");
 document.getElementById("letter-slots").textContent = slotArr.join(" ");
+
+gameRunning = true;
 
 gamePlay();
 }
@@ -83,17 +96,27 @@ function gamePlay() {
         document.getElementById("past-guesses").textContent = pastGuesses;
     }
 }
+
 function gameEnd() {
     if (!newSlotArr.includes("_ ")) {
         wins++;
         console.log("Wins: " + wins);
-        gameStart();
+        gameRunning = false;
+        document.onkeyup = function() {
+            gameStart();
+        }
     }
     if (guessesLeft === 0) {
         losses--;
         console.log("Losses: " + losses);
-        gameStart();
+        gameRunning = false;
+        document.onkeyup = function() {
+            gameStart();
+        }
     } 
+document.getElementById("instructions").style.display = "none";
 }
 
-gameStart();
+getGoing();
+
+
