@@ -12,3 +12,8 @@ Javascript, HTML, & CSS
 
 I used Bootstrap for the basic setup of the page.
 
+## Roadmap
+
+With more time, I'd like to improve the design elements.
+
+It would also be interesting to increase the options in the word bank- possibly adding categories to make the game more robust.
