@@ -1,32 +1,46 @@
-* {
+body {
     box-sizing: border-box;
     margin: 0;
+    background-image: url(../images/bamboo.jpg);
 }
 
-#gamename {
-    background-color: lightgreen;
+h1 {
+    background-color: antiquewhite;
+    border-radius: 5px;
     width: 100%;
-    border: solid thin black;
-    padding: 1rem;
+    text-align: center;
+    border: solid thin #004d00;
+    margin: 1rem;
+    padding: 2rem;
+    font-weight: bold;
+    font-family: 'Acme', sans-serif;
+    color: #008000;
 }
 
 #gameboard {
     background-color: antiquewhite;
-    border: solid thin black;
+    border-radius: 10px;
+    text-align: center;
+    border: solid thin #004d00;
     margin: 1rem;
-    padding: 1rem;
+    padding: 2rem;
+    color: #004d00;
 }
 
 #scoreboard {
     background-color: antiquewhite;
-    border: solid thin black;
+    border-radius: 5px;
+    border: solid thin #004d00;
     margin: 1rem;
-    padding: 1rem;
+    padding: 2rem;
+    color: #004d00;
 }
 
 #guess-bank {
     background-color: antiquewhite;
-    border: solid thin black;
+    border-radius: 5px;
+    border: solid thin #004d00;
     margin: 1rem;
-    padding: 1rem;
+    padding: 2rem;
+    color: #004d00;
 }

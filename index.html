@@ -14,13 +14,12 @@
 
         <!-- Name of the Game -->
         <div class="row" id=#gamename>
-            <div class="col">
                 <h1>Zoological Word Game</h1>
-            </div>
         </div>
         <div class="row">
+
             <!-- Gameboard with answer blanks -->
-            <div class="col col-lg-8" id="gameboard">
+            <div class="col col-lg-8 col-sm-12" id="gameboard">
                 <!-- Leading instructions, to disappear on keystroke -->
                 <div class="row">
                     <div class="col">
@@ -29,7 +28,7 @@
                 </div>
                 <h2><span id="letter-slots"></span></h2>
             </div>
-            <div class="col col-lg-2" id="scoreboard">
+            <div class="col col-lg-3  col-sm-12" id="scoreboard">
                 <!-- Statistics to keep track of -->
                 <ul>
                     <li>Wins: <span id="win">0</span></li>
@@ -41,12 +40,12 @@
 
         <!-- Bank of Letters Already Guessed -->
         <div class="row">
-            <div class="col col-lg-8" id="guess-bank">
+            <div class="col col-lg-8  col-sm-12" id="guess-bank">
                 <h4>You have guessed these letters:</h4>
                 <!-- Guessed letters go here -->
                 <p><span id="past-guesses"></span></p>
             </div>
-            <div class="col col-lg-2">
+            <div class="col col-lg-3  col-sm-12">
                     <!-- Empty spaceholder column so guess bank lines up with gameboard -->
             </div>
         </div>
