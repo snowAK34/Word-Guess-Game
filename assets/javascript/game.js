@@ -27,12 +27,13 @@ function getGoing() {
 };
 
 function gameStart() {
-    gameRunning === true
+    gameRunning = true
     console.log("Running(start of gameStart): " + gameRunning);
 
     // Reset Variables
     pastGuesses = [] ;
     guessesLeft = 10;
+    matchCount = 0;
 
     // Hide Directions
     document.getElementById("instructions").style.display = "none";
@@ -55,7 +56,7 @@ function gameStart() {
 
 
 function gamePlay() {
-    gameRunning === true
+    gameRunning = true
     console.log("Running(start of gamePlay): " + gameRunning);
     
     // Obtain guess from user on keypress, changes to uppercase, & stores in a list of guesses
@@ -104,16 +105,18 @@ function gameEnd() {
     if (matchCount === answerLetters.length) {
         wins++;
         console.log("Wins: " + wins);
-        gameRunning === false;
+        gameRunning = false;
         console.log("Running(win condition): " + gameRunning);
         getGoing();
+        alert("You won!  Press any key to play again.")
     }
     else if (guessesLeft === 0) {
         losses--;
         console.log("Losses: " + losses);
-        gameRunning == false;
+        gameRunning = false;
         console.log("Running(lose condition): " + gameRunning);
         getGoing();
+        alert("You lost.  Press any key to play again.");
     }
     else {
         gamePlay();
