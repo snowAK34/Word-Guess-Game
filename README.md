@@ -1,5 +1,7 @@
 # Word Guess Game
 
+https://snowak34.github.io/Word-Guess-Game/
+
 ## Description
 
 My first Javascript project is an exercise to make a word guess game in a hangman style.  A key press starts the game and a random word from an array is chosen.  All words in my game follow a zoo animal theme.  As letters are guessed, each guess is either matched with an answer letter, or subtracts from the guesses left.
